@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+    <!-- import -->
+    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/locomotive-scroll@3.2.5/dist/locomotive-scroll.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
+    <link rel="stylesheet" href="main.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body id="js-scroll">
+    <div id="cursor">
+        <span class="more">
+            <ion-icon name="add-circle-outline"></ion-icon>
+        </span>
+    </div>
+
+    <div id="brand">
+        <a href="index.html">HNKI <span>Studio</span></a>
+    </div>
+    <nav>
+        <ul>
+            <li>
+                <a href="index.html">Projects</a>
+            </li>
+            <li>
+                <a class="active" href="about.html">About</a>
+            </li>
+        </ul>
+        <div class="toggler">
+            <ion-icon class="open" name="menu"></ion-icon>
+            <ion-icon class="close" name="close"></ion-icon>
+        </div>
+    </nav>
+
+    <!-- social media -->
+    <div class="social-media">
+        <ul>
+            <li>
+                <a target="_blank" href="https://www.instagram.com/elisee.4/">
+                    <ion-icon name="logo-instagram"></ion-icon>
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="https://www.linkedin.com/in/elisee-desmarest-410962209/">
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                </a>
+            </li>
+            <li>
+                <a target="_blank" href="https://github.com/elisee9571">
+                    <ion-icon name="logo-github"></ion-icon>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- about-section -->
+    <section id="about-section">
+        <p class="p-container">Hi! My name is <span>Elisee Desmarest</span> Im French and I'm a developper web, born in <span>Paris,</span> France.</p>
+
+        <p>If you have any questions or would like to have a chat, don't hesitate to <span class="#" target="_blank">get
+                    in touch.</a></span></p>
+        </div>
+
+        <div class="cursor-follow"></div>
+    </section>
+
+    <script>
+        // img following mouse 
+        TweenMax.from(".cursor-follow", 2, {
+            delay: 1,
+            opacity: 0
+        });
+
+        follower = document.querySelector('.cursor-follow');
+
+        posX = 0;
+        posY = 0;
+        mouseX = 0;
+        mouseY = 0;
+
+        TweenMax.to({}, 0.016, {
+            repeat: -1,
+            onRepeat: function() {
+                posX += (mouseX - posX) / 9;
+                posY += (mouseY - posY) / 9;
+
+                TweenMax.set(follower, {
+                    css: {
+                        left: posX - 40,
+                        top: posY - 40,
+                    }
+                });
+            }
+        });
+
+        document.addEventListener("mousemove", function(e) {
+            mouseX = e.pageX;
+            mouseY = e.pageY;
+        });
+    </script>
+
+</body>
+
+</html>
