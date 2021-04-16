@@ -18,6 +18,7 @@ html {
     padding: 0;
     color: #e5e5e5;
     scroll-behavior: smooth;
+    cursor: none !important;
 }
 
 body {
@@ -64,6 +65,12 @@ h3 {
     transition: background 0.15s ease;
 }
 
+@media(max-width: 900px) {
+    .percent {
+        display: none;
+    }
+}
+
 
 /* cursor */
 
@@ -89,13 +96,86 @@ h3 {
 }
 
 
+/* scroll-down */
+
+.scroll-down {
+    position: absolute;
+    bottom: 5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10;
+}
+
+.mouse {
+    display: flex;
+    width: 1.5rem;
+    height: 3rem;
+    border: 2px solid #fff;
+    border-radius: 2rem;
+    margin-bottom: .2rem;
+}
+
+.mouse span {
+    width: .75rem;
+    height: .75rem;
+    background: #fff;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    animation: move-wheel 1s ease-in-out infinite;
+}
+
+.arrow span {
+    display: block;
+    width: .7rem;
+    height: .7rem;
+    border: 2px solid transparent;
+    border-right-color: #fff;
+    border-bottom-color: #fff;
+    transform: rotate(45deg);
+    animation: arrow-down .5s alternate infinite;
+}
+
+@keyframes move-wheel {
+    0% {
+        opacity: 0;
+        transform: translateY(-.8rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(.8rem);
+    }
+}
+
+@keyframes arrow-down {
+    0% {
+        opacity: 0;
+    }
+    25% {
+        opacity: .25;
+    }
+    50% {
+        opacity: .5;
+    }
+    75% {
+        opacity: .75;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
 /* nav */
 
 #brand {
+    position: fixed;
     top: 80px;
     left: 80px;
     z-index: 10;
-    position: fixed;
 }
 
 #brand a {
@@ -170,6 +250,15 @@ nav ul li a.active {
     color: #e5e5e5;
 }
 
+@media(max-width: 900px) {
+    nav {
+        right: 35px;
+    }
+    .social-media ul {
+        right: 30px;
+    }
+}
+
 
 /* hero */
 
@@ -214,6 +303,7 @@ nav ul li a.active {
 }
 
 #gallery-section {
+    display: flex;
     height: auto;
     width: 80%;
     display: grid;
@@ -224,7 +314,7 @@ nav ul li a.active {
     margin-bottom: 320px;
 }
 
-#gallery-section h4 {
+#gallery-section a {
     font-family: 'monument_extendedregular';
     font-size: 52px;
     margin-left: 10%;
@@ -232,7 +322,9 @@ nav ul li a.active {
     display: block;
     position: absolute;
     opacity: 0;
-    pointer-events: none;
+    cursor: none;
+    text-decoration: none;
+    color: #e5e5e5;
 }
 
 .img-container {
@@ -348,9 +440,8 @@ p.p-container {
 }
 
 @media(max-width: 900px) {
-    .about__container {
-        width: 70%;
-        margin: 140px 0 60px 40px;
+    #about-section p {
+        font-size: 35px;
     }
     .cursor-follow {
         display: none;

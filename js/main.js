@@ -10,6 +10,7 @@ $(document).ready(function() {
             0.5, { y: "-20px", opacity: 0 },
             0.2
         )
+        .staggerFrom(".scroll-down", 0.5, { y: "-20px", opacity: 0 })
 
     .eventCallback("onComplete", () => {
         menuTl.play();
@@ -30,7 +31,7 @@ $(document).ready(function() {
         $left += ($mouseX - $left) / 12;
         $top += ($mouseY - $top) / 12;
         $("#cursor").css({ left: $left + "px", top: $top + "px" });
-    }, 30);
+    });
 
     linkHoverTl = new TimelineMax({ paused: true });
     linkHoverTl.to("#cursor", 0.3, { scale: 1.5 });
@@ -49,7 +50,7 @@ $(document).ready(function() {
     $(".img-container").each(function(i, el) {
         let imgHoverTl = new TimelineMax({ paused: true });
         imgHoverTl.to($(this).find("img"), 0.3, { opacity: 0.4 })
-            .to($(this).find("h4"), 0.3, { opacity: 1, y: "50px" });
+            .to($(this).find("a"), 0.3, { opacity: 1, y: "50px" });
         el.animation = imgHoverTl;
     });
 
