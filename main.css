@@ -19,6 +19,8 @@ html {
     color: #e5e5e5;
     scroll-behavior: smooth;
     cursor: none !important;
+    text-decoration: none;
+    list-style: none;
 }
 
 body {
@@ -49,7 +51,7 @@ h3 {
     display: flex;
     top: 50%;
     transform: translateY(-50%);
-    left: 80px;
+    right: 80px;
     flex-direction: column;
     background: rgba(255, 255, 255, 0.2);
     height: 175px;
@@ -171,76 +173,37 @@ h3 {
 
 /* nav */
 
-#brand {
+#nav {
     position: fixed;
-    top: 80px;
-    left: 80px;
-    z-index: 10;
-}
-
-#brand a {
-    font-family: 'monument_extendedregular';
-    font-size: 30px;
-    text-decoration: none;
-}
-
-#brand a span {
-    font-size: 16px;
-}
-
-nav {
-    font-family: 'monument_extendedregular';
-    position: absolute;
-    top: 90px;
-    right: 80px;
-    display: flex;
-    position: fixed;
-    z-index: 10;
-}
-
-nav .toggler {
-    margin-left: 50px;
-    height: 22px;
-    width: 22px;
-    cursor: pointer;
-}
-
-nav .toggler .close {
-    opacity: 0;
-}
-
-nav .toggler ion-icon {
+    top: 30px;
+    right: 30px;
+    bottom: 30px;
+    left: 30px;
     color: #e5e5e5;
+    z-index: 1;
+}
+
+.nav-l {
     position: absolute;
-    font-size: 28px;
-}
-
-nav ul li {
-    margin: 0 40px;
-    display: inline-block;
-}
-
-nav ul li a {
-    text-decoration: none;
-    font-size: 18px;
-    display: #e5e5e5;
-}
-
-nav ul li a.active {
-    text-decoration: underline;
+    top: 0;
+    left: 0;
+    width: 90px;
+    height: 100%;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 2;
 }
 
 .social-media ul {
-    position: fixed;
-    right: 80px;
-    top: 340px;
+    position: absolute;
     display: flex;
     flex-direction: column;
-    z-index: 10;
+    left: 50%;
+    bottom: 22px;
+    transform: translateX(-50%);
 }
 
 .social-media ul li {
-    margin: 40px 0;
+    margin: 30px 0;
     display: inline-block;
 }
 
@@ -250,13 +213,78 @@ nav ul li a.active {
     color: #e5e5e5;
 }
 
-@media(max-width: 900px) {
-    nav {
-        right: 35px;
-    }
-    .social-media ul {
-        right: 30px;
-    }
+.nav-line-wrap {
+    position: relative;
+}
+
+.nav-t {
+    position: relative;
+    width: 100%;
+    height: 90px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    z-index: 2;
+}
+
+.nav-t .toggler {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    height: 30px;
+    width: 30px;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.nav-t .toggler .close {
+    opacity: 0;
+}
+
+.nav-t .toggler ion-icon {
+    color: #e5e5e5;
+    position: absolute;
+    font-size: 30px;
+}
+
+#brand {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 12.5px;
+    font-family: 'monument_extendedregular';
+    font-size: 20px;
+    color: #e5e5e5;
+    text-decoration: none;
+}
+
+#nav-t-l-w {
+    position: absolute;
+    top: 0;
+    height: 90px;
+    right: 56px;
+    display: flex;
+    flex-direction: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#nav-t-l-w li {
+    margin: 0 30px;
+    display: inline-block;
+}
+
+#nav-t-l-w li a {
+    font-family: 'monument_extendedregular';
+    font-size: 15px;
+    color: #e5e5e5;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    display: flex;
+}
+
+#nav-t-l-w li a.active {
+    text-decoration: underline;
 }
 
 
@@ -312,6 +340,7 @@ nav ul li a.active {
     position: relative;
     left: 10%;
     margin-bottom: 320px;
+    z-index: 1;
 }
 
 #gallery-section a {
@@ -329,7 +358,7 @@ nav ul li a.active {
 
 .img-container {
     height: 500px;
-    width: 70%;
+    width: 80%;
     overflow: hidden;
     display: flex;
     justify-content: center;
@@ -341,9 +370,9 @@ nav ul li a.active {
 }
 
 img {
-    height: 100%;
-    width: auto;
+    width: 400px;
     background: #111;
+    object-fit: cover;
 }
 
 #footer-section {
@@ -352,6 +381,7 @@ img {
     display: flex;
     position: relative;
     align-items: center;
+    z-index: 1;
 }
 
 #footer-section .link {
@@ -373,7 +403,7 @@ img {
 
 #scroll-top {
     position: absolute;
-    left: 80px;
+    right: 80px;
     font-family: 'monument_extendedregular';
     font-size: 16px;
 }
@@ -383,19 +413,24 @@ img {
 }
 
 @media(max-width: 900px) {
+    .img-container {
+        height: 400px;
+        width: 80%;
+    }
+    .img-container:nth-child(even) {
+        margin-top: 200px;
+    }
     #scroll-top {
-        display: none;
+        bottom: 30px;
+        right: 50px;
     }
 }
 
 
 /* page about */
 
-#js-scroll {
-    height: 200%;
-}
-
 #about-section {
+    height: 100vh !important;
     width: 50%;
     margin: 180px 0 100px 100px;
     padding: 40px;

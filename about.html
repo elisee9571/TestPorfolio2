@@ -44,51 +44,51 @@
     <script src="js/main.js"></script>
 </head>
 
-<body id="js-scroll">
+<body>
     <div id="cursor">
         <span class="more">
             <ion-icon name="add-circle-outline"></ion-icon>
         </span>
     </div>
 
-    <div id="brand">
-        <a href="index.html">HNKI <span>Studio</span></a>
-    </div>
-    <nav>
-        <ul>
-            <li>
-                <a href="index.html">Projects</a>
-            </li>
-            <li>
-                <a class="active" href="about.html">About</a>
-            </li>
-        </ul>
-        <div class="toggler">
-            <ion-icon class="open" name="menu"></ion-icon>
-            <ion-icon class="close" name="close"></ion-icon>
+    <nav id="nav">
+        <div class="nav-l">
+            <div class="social-media">
+                <ul>
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/elisee.4/">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/elisee-desmarest-410962209/">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://github.com/elisee9571">
+                            <ion-icon name="logo-github"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-t">
+            <a id="brand" href="index.html">HNKI</a>
+            <ul id="nav-t-l-w">
+                <li>
+                    <a class="nav-line-wrap active" href="index.html">Projects</a>
+                </li>
+                <li>
+                    <a class="nav-line-wrap" href="about.html">About</a>
+                </li>
+            </ul>
+            <div class="toggler">
+                <ion-icon class="open" name="menu"></ion-icon>
+                <ion-icon class="close" name="close"></ion-icon>
+            </div>
         </div>
     </nav>
-
-    <!-- social media -->
-    <div class="social-media">
-        <ul>
-            <li>
-                <a target="_blank" href="https://www.instagram.com/elisee.4/">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-            </li>
-            <li>
-                <a target="_blank" href="https://www.linkedin.com/in/elisee-desmarest-410962209/">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                </a>
-            </li>
-            <li>
-                <a target="_blank" href="https://github.com/elisee9571">
-                    <ion-icon name="logo-github"></ion-icon>
-                </a>
-            </li>
-        </ul>
-    </div>
 
     <!-- about-section -->
     <section id="about-section">
@@ -115,7 +115,7 @@
         mouseX = 0;
         mouseY = 0;
 
-        TweenMax.to({}, 0.016, {
+        TweenMax.to({}, 0.01, {
             repeat: -1,
             onRepeat: function() {
                 posX += (mouseX - posX) / 9;
@@ -123,8 +123,8 @@
 
                 TweenMax.set(follower, {
                     css: {
-                        left: posX - 40,
-                        top: posY - 40,
+                        left: posX - 50,
+                        top: posY - 50,
                     }
                 });
             }

@@ -6,7 +6,7 @@ $(document).ready(function() {
         .staggerFrom("#hero-section h2 span", 0.5, { x: "-20px", opacity: 0 }, 0.1)
         .from("#hero-section h1", 0.5, { y: "-100px", opacity: 0 })
         .staggerFrom(
-            "#brand, nav .toggler, .social-media ul li a",
+            "#brand, #nav .toggler, .social-media ul li a",
             0.5, { y: "-20px", opacity: 0 },
             0.2
         )
@@ -36,7 +36,7 @@ $(document).ready(function() {
     linkHoverTl = new TimelineMax({ paused: true });
     linkHoverTl.to("#cursor", 0.3, { scale: 1.5 });
 
-    $("nav ul li a, .toggler, #brand a, .social-media ul li a, #scroll-top").hover(() => {
+    $("nav ul li a, .toggler, #nav-t-logo, .social-media ul li a, #scroll-top").hover(() => {
         linkHoverTl.play();
     }, () => {
         linkHoverTl.reverse();

@@ -18,7 +18,6 @@
     <meta name="twitter:description" content="Portfolio of Elisee Desmarest, a developer based in France.">
     <meta name="twitter:image" content="https://elisee9571.github.io/Portfolio1/img/5.jpg">
 
-
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://elisee9571.github.io/Portfolio1/">
     <meta property="og:title" content="Elisee Desmarest - Creative Developer">
@@ -35,7 +34,7 @@
     <link rel="shortcut icon" href="/fav/favicon.ico">
     <!-- import -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/scrollReveal.js/3.3.6/scrollreveal.min.js"></script>
-    <script src="https://unpkg.com/ionicons@5.4.0/dist/ionicons.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@5.0.0/dist/ionicons/ionicons.esm.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TweenMax.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/latest/TimelineMax.min.js"></script>
@@ -66,44 +65,44 @@
         </a>
     </div>
 
-    <div id="brand">
-        <a href="index.html">HNKI <span>Studio</span></a>
-    </div>
-    <nav>
-        <ul>
-            <li>
-                <a class="active" href="index.html">Projects</a>
-            </li>
-            <li>
-                <a href="about.html">About</a>
-            </li>
-        </ul>
-        <div class="toggler">
-            <ion-icon class="open" name="menu"></ion-icon>
-            <ion-icon class="close" name="close"></ion-icon>
+    <nav id="nav">
+        <div class="nav-l">
+            <div class="social-media">
+                <ul>
+                    <li>
+                        <a target="_blank" href="https://www.instagram.com/elisee.4/">
+                            <ion-icon name="logo-instagram"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://www.linkedin.com/in/elisee-desmarest-410962209/">
+                            <ion-icon name="logo-linkedin"></ion-icon>
+                        </a>
+                    </li>
+                    <li>
+                        <a target="_blank" href="https://github.com/elisee9571">
+                            <ion-icon name="logo-github"></ion-icon>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="nav-t">
+            <a id="brand" href="index.html">HNKI</a>
+            <ul id="nav-t-l-w">
+                <li>
+                    <a class="nav-line-wrap active" href="index.html">Projects</a>
+                </li>
+                <li>
+                    <a class="nav-line-wrap" href="about.html">About</a>
+                </li>
+            </ul>
+            <div class="toggler">
+                <ion-icon class="open" name="menu"></ion-icon>
+                <ion-icon class="close" name="close"></ion-icon>
+            </div>
         </div>
     </nav>
-
-
-    <div class="social-media">
-        <ul>
-            <li>
-                <a target="_blank" href="https://www.instagram.com/elisee.4/">
-                    <ion-icon name="logo-instagram"></ion-icon>
-                </a>
-            </li>
-            <li>
-                <a target="_blank" href="https://www.linkedin.com/in/elisee-desmarest-410962209/">
-                    <ion-icon name="logo-linkedin"></ion-icon>
-                </a>
-            </li>
-            <li>
-                <a target="_blank" href="https://github.com/elisee9571">
-                    <ion-icon name="logo-github"></ion-icon>
-                </a>
-            </li>
-        </ul>
-    </div>
 
     <section id="hero-section">
         <h1>DevelopperWeb</h1>
@@ -182,9 +181,9 @@
         //reveal on scroll
         const sr = ScrollReveal();
         sr.reveal(".img-container", {
-            origin: 'bottom',
-            distance: '100px',
-            duration: 2000
+            easing: 'ease-in',
+            opacity: 0,
+            duration: 500,
         });
     </script>
 </body>
